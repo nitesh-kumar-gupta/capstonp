@@ -159,7 +159,7 @@ $(document).ready(function(){
 		}
 	});
 // Prepare the preview for profile picture
-	$("#wizard-picture").change(function(){
+	$("#profilePicture").change(function(){
 		readURL(this);
 	});
 	$('[data-toggle="wizard-radio"]').click(function(){
@@ -191,7 +191,6 @@ $(document).ready(function(){
 				type: 'POST',
 				data: $('#formRegister').serialize(),
 				success: function(result) {
-					console.log('success',result);
 					$('#btn-finish').attr('disabled',false);
 					$('#btn-finish-text').html('Finish');
 					$('#btn-finish-icon').removeClass('fa fa-spinner fa-spin');
@@ -204,7 +203,17 @@ $(document).ready(function(){
 					$('#btn-finish-text').html('Finish');
 					$('#btn-finish-icon').removeClass('fa fa-spinner fa-spin');
 					$('#register-error-message').removeClass('hide');
-					$('#register-error-message span').html(' '+error.responseText);
+					error = JSON.parse(error.responseText);
+					errMsg = '';
+					for(err in error)
+						errMsg += '<i class="fa fa-exclamation"></i> '+error[err]+'</br>';
+					$('#register-error-message').html(errMsg);
+					if(error.reg_id || error.firstname || error.middlename || error.lastname) {
+						$('#btn-previous').trigger('click');
+						$('#btn-previous').trigger('click');
+					}
+					else if(error.email || error.password)
+						$('#btn-previous').trigger('click');
 				}
 			});
 		}

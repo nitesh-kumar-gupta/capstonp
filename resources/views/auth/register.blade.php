@@ -14,11 +14,11 @@
 						</h3>
 						<h5>This information will let us know more about you.</h5>
 					</div>
-					<div class="wizard-navigation">
+					<div class="wizard-navigation" id="register-wizard-navigation">
 						<ul>
-							<li><a href="#about" data-toggle="tab">About</a></li>
-							<li><a href="#account" data-toggle="tab">Account</a></li>
-							<li><a href="#college" data-toggle="tab">College</a></li>
+							<li id="tab-about"><a href="#about" data-toggle="tab">About</a></li>
+							<li id="tab-account"><a href="#account" data-toggle="tab">Account</a></li>
+							<li id="tab-college"><a href="#college" data-toggle="tab">College</a></li>
 						</ul>
 					</div>
 					<div class="tab-content">
@@ -29,7 +29,7 @@
 									<div class="picture-container">
 										<div class="picture">
 											<img src="{{ asset('images/default-avatar.png') }}" class="picture-src" id="wizardPicturePreview" title=""/>
-											<input type="file" name="profilePicture" id="profilePicture">
+											<input type="file" name="profilePicture" id="profilePicture" accept="image/*" class="form-control">
 										</div>
 										<h6>Choose Picture</h6>
 									</div>
@@ -189,7 +189,7 @@
 						</div>
 					</div>
 					<div class="wizard-footer">
-						<div id="register-error-message" class="alert alert-danger hide"><i class="fa fa-exclamation"></i><span></span></div>
+						<div id="register-error-message" class="alert alert-danger hide"></div>
 						<div class="pull-right">
 							<input type='button' id="btn-next" class='btn btn-next btn-fill btn-success btn-wd' name='next' value='Next' />
 							<button type="button" id="btn-finish" class='btn btn-finish btn-fill btn-success btn-wd' name='finish'>
@@ -200,7 +200,7 @@
 						</div>
 
 						<div class="pull-left">
-							<input type='button' id="btn-finish" class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
+							<input type='button' id="btn-previous" class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
 						</div>
 						<div class="clearfix"></div>
 					</div>
