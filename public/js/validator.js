@@ -190,7 +190,7 @@ $(document).ready(function(){
 			$('#btn-quote-text').html(' Please wait');
 			$('#btn-quote-icon').addClass('fa fa-spinner fa-spin');
 			$.ajax({
-				url: 'mypost',
+				url: 'addnewquote',
 				type: 'POST',
 				data: data,
 				success: function(result) {

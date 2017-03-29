@@ -14,9 +14,15 @@
             <li class="{{ Request::path() == 'profile' ? 'active' : '' }}">
                 <a href="{{ route('profile') }}">
                     <i class="material-icons">person</i>
-                    <p>User Profile</p>
+                    <p>My Profile</p>
                 </a>
             </li>
+			<li class="{{ Request::path() == 'quotes' ? 'active' : '' }}">
+				<a href="{{ route('quotes') }}">
+					<i class="material-icons">record_voice_over</i>
+					<p>Quotes</p>
+				</a>
+			</li>
         </ul>
     </div>
 </div>

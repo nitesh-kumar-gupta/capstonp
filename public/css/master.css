@@ -90,3 +90,32 @@ label.error{
 .tim-row h3{
     margin-top: 0;
 }
+
+#pagination {
+    list-style: none;
+    position: relative;
+    float: left;
+    display: block;
+    left: 50%;
+}
+#pagination> li {
+    position: relative;
+    float: left;
+    display: block;
+    right: 50%;
+}
+.posted-date{
+    display: block;
+    font-size: 10px;
+    color: #03A9F4;
+    float: right;
+}
+.pagination-orange>.active>a,
+.pagination-orange>.active>a:focus,
+.pagination-orange>.active>a:hover,
+.pagination-orange>.active>span,
+.pagination-orange>.active>span:focus,
+.pagination-orange>.active>span:hover{
+    background-color: #FF9800;
+    border-color: #FF9800;
+}

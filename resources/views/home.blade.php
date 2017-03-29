@@ -27,7 +27,7 @@
 									</li>
 									<li class="">
 										<a href="#placement" data-toggle="tab">
-											<i class="material-icons">cloud</i>
+											<i class="material-icons">work</i>
 											Placement
 											<div class="ripple-container"></div>
 										</a>
@@ -41,7 +41,7 @@
 									</li>
 									<li class="">
 										<a href="#tour" data-toggle="tab">
-											<i class="material-icons">cloud</i>
+											<i class="material-icons">explore</i>
 											Tours
 											<div class="ripple-container"></div>
 										</a>
@@ -150,7 +150,7 @@
 			<div class="col-md-4">
 				<div class="card">
 					<div class="card-header" data-background-color="orange">
-						<blockquote>Quotes</blockquote>
+						<blockquote><a href="{{ route('quotes') }}">Quotes</a></blockquote>
 					</div>
 					<div class="card-content" id="card-content-quote">
 
@@ -161,47 +161,7 @@
 	</div>
 </div>
 @endsection
-
 @section('script')
-<script type="text/javascript">
-	$(document).ready(function () {
-		function showQuotes(){
-			var quotes = '';
-			quotes = '';
-			$.ajax({
-				url: 'quotes',
-				type: 'GET',
-				success: function(result) {
-					result.forEach(function(quote){
-						var profileImage = quote.user.profile_image?quote.user.profile_image:"{{asset('images/default-avatar.png')}}";
-						var middlename = quote.user.middlename?' '+quote.user.middlename+' ':' ';
-						quotes+='<div class="tim-typo">'+
-							'<span class="tim-note">'+
-							'<a href="profile/'+quote.user.id+'">'+
-							'<img class="quote-img" src="'+profileImage+'"/>'+
-							'</a>'+
-							'</span>'+
-							'<blockquote>'+
-							'<p>'+
-							quote.quote+
-							'</p>'+
-							'<small>'+
-							'<a href="profile/'+quote.user.id+'">'+
-							quote.user.firstname+middlename+quote.user.lastname+
-							'</a>'+
-							'</small>'+
-							'</blockquote>'+
-							'</div>';
-					});
-					$('#card-content-quote').hide().html(quotes).fadeIn('slow');
-				},
-				error: function (error) {
-					console.log('error',error);
-				}
-			});
-		}
-		showQuotes();
-		setInterval(showQuotes, 10000);
-	});
-</script>
+	<script type="text/javascript" src="{{ asset('js/ajaxcalls.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/moment.js') }}"></script>
 @endsection
