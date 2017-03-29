@@ -9,6 +9,7 @@ return array(
     'CreateBranchesTable' => $baseDir . '/database/migrations/2017_03_21_201458_create_branches_table.php',
     'CreateCoursesTable' => $baseDir . '/database/migrations/2017_03_21_203023_create_courses_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreateQuotesTable' => $baseDir . '/database/migrations/2017_03_28_090946_create_quotes_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',

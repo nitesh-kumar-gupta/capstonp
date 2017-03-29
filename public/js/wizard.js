@@ -203,6 +203,7 @@ $(document).ready(function(){
 					$('#btn-finish-text').html('Finish');
 					$('#btn-finish-icon').removeClass('fa fa-spinner fa-spin');
 					$('#register-error-message').removeClass('hide');
+					console.log(error);
 					error = JSON.parse(error.responseText);
 					errMsg = '';
 					for(err in error)

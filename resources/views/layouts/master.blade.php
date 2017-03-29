@@ -19,6 +19,7 @@
         </script>
     </head>
     <body>
+		<script type="text/javascript" src="https://static.filestackapi.com/v3/filestack.js"></script>
 		@include('layouts.footer')
 		<div class="wrapper">
 			@extends('layouts.sidebar')
@@ -35,4 +36,7 @@
     <script src="{{ asset('js/bootstrap-notify.js') }}"></script>
     <script src="{{ asset('js/material-dashboard.js') }}"></script>
     <script src="{{ asset('js/master.js') }}"></script>
+	<script src="{{asset('js/validator.js')}}"></script>
+	<script src="{{asset('js/jquery.validate.min.js')}}"></script>
+	@yield('script')
 </html>

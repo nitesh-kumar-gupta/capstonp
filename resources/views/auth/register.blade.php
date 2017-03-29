@@ -25,16 +25,7 @@
 						<div class="tab-pane" id="about">
 							<div class="row">
 								<h4 class="info-text"> Let's start with the basic information</h4>
-								<div class="col-sm-4 col-sm-offset-1">
-									<div class="picture-container">
-										<div class="picture">
-											<img src="{{ asset('images/default-avatar.png') }}" class="picture-src" id="wizardPicturePreview" title=""/>
-											<input type="file" name="profilePicture" id="profilePicture" accept="image/*" class="form-control">
-										</div>
-										<h6>Choose Picture</h6>
-									</div>
-								</div>
-								<div class="col-sm-6">
+								<div class="col-sm-10  col-sm-offset-1">
 									<div class="input-group" id="user_reg_id">
 										<span class="input-group-addon">
 											<i class="material-icons">label</i>

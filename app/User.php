@@ -14,8 +14,12 @@ class User extends Authenticatable
      *
      * @var array
      */
+    public function quote(){
+        return $this->hasMany('App\Quote');
+    }
     protected $fillable = [
         'reg_id',
+        'profile_image',
         'firstname',
         'middlename',
         'lastname',
@@ -24,10 +28,16 @@ class User extends Authenticatable
         'batch',
         'branch',
         'course',
-        'semester'
+        'semester',
+        'address',
+        'city',
+        'country',
+        'zip',
+        'about_me'
     ];
     protected $casts = [
         'reg_id' => 'integer',
+        'profile_image' => 'string',
         'firstname' => 'string',
         'middlename' => 'string',
         'lastname' => 'string',
@@ -36,7 +46,12 @@ class User extends Authenticatable
         'batch' => 'integer',
         'branch' => 'string',
         'course' => 'string',
-        'semester' => 'integer'
+        'semester' => 'integer',
+        'address' => 'string',
+        'city' => 'string',
+        'country' => 'string',
+        'zip' => 'string',
+        'about_me' => 'string'
     ];
 
     public static $rules = [
