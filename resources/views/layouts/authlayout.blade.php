@@ -8,8 +8,8 @@
 		<title>@yield('title') | Capston</title>
 		<link rel="icon" href="{{ asset('favicon.ico') }}" />
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" />
+		<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/wizard.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/auth.css') }}">
 		<script>
@@ -26,8 +26,8 @@
 		</div>
 		@yield('footer')
 	</div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="{{ asset('js/jquery.min.js') }}"></script>
+	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 	<script src="{{asset('js/jquery.bootstrap.js')}}"></script>
 	<script src="{{asset('js/wizard.js')}}"></script>
 	<script src="{{asset('js/jquery.validate.min.js')}}"></script>
