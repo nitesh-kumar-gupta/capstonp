@@ -17,6 +17,9 @@ class User extends Authenticatable
     public function quote(){
         return $this->hasMany('App\Quote');
     }
+    public function study(){
+        return $this->hasMany('App\Study');
+    }
     protected $fillable = [
         'reg_id',
         'profile_image',

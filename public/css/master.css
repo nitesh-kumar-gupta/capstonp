@@ -79,7 +79,7 @@ label.error{
     margin-left: 0px;
     position: absolute;
 }
-.tim-note img.quote-img{
+.tim-note img.quote-img,.tim-note img.study-img{
     max-width: 50px;
     max-height: 50px;
     border-radius: 50%;
@@ -118,4 +118,14 @@ label.error{
 .pagination-orange>.active>span:hover{
     background-color: #FF9800;
     border-color: #FF9800;
+}
+.link{
+    display: block;
+}
+.link a{
+    font-size: 13px;
+    text-decoration: none;
+}
+.profile-link{
+    color: #666;
 }

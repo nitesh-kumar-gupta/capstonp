@@ -8,7 +8,7 @@
         <title>@yield('title') | Capston</title>
         <link rel="icon" href="{{ asset('favicon.ico') }}" />
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-		<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 		<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/material-dashboard.css') }}">
         <link rel="stylesheet" href="{{ asset('css/master.css') }}">

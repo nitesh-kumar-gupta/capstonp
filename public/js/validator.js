@@ -164,7 +164,7 @@ $(document).ready(function(){
 		});
 	})
 
-	var $validator = $('#formQuotePost').validate({
+	var $validatorQuote = $('#formQuotePost').validate({
 		rules: {
 			quote: {
 				required: true,
@@ -177,10 +177,6 @@ $(document).ready(function(){
 				minlength: "Quote must be of minimum 20 alphabets"
 			}
 		}
-		//,
-		// errorPlacement: function(error, element) {
-		// 	$(element).parent('div').addClass('has-error');
-		// }
 	});
 	$('#btn-quote').click(function (e) {
 		e.preventDefault();
@@ -213,4 +209,51 @@ $(document).ready(function(){
 			});
 		}
 	});
+
+	var $validatorStudy = $('#formStudyPost').validate({
+		rules: {
+			study: {
+				required: true,
+				minlength: 10
+			}
+		},
+		messages:{
+			study:{
+				required: "Cannot post empty",
+				minlength: "Study information must be of minimum 10 alphabets"
+			}
+		}
+	});
+	$('#btn-study').click(function (e) {
+		e.preventDefault();
+		if($('#formStudyPost').valid()){
+			var data = $('#formStudyPost').serialize();
+			$('#btn-study').attr('disabled',true);
+			$('#btn-study-text').html(' Please wait');
+			$('#btn-study-icon').addClass('fa fa-spinner fa-spin');
+			$.ajax({
+				url: 'addnewstudy',
+				type: 'POST',
+				data: data,
+				success: function(result) {
+					$('#btn-study').attr('disabled',false);
+					$('#btn-study-text').html('Post Study');
+					$('#btn-study-icon').removeClass('fa fa-spinner fa-spin');
+					$('#formStudyPost textarea').val('');
+					$('#formStudyPost .label-floating').addClass('is-empty');
+				},
+				error: function (error) {
+					$('#btn-study').attr('disabled',false);
+					$('#btn-study-text').html('Post Study');
+					$('#btn-study-icon').removeClass('fa fa-spinner fa-spin');
+					error = JSON.parse(error.responseText);
+					errMsg = '';
+					for(err in error)
+						errMsg += '<i class="fa fa-exclamation"></i> '+error[err]+'</br>';
+					$('#post_quote-error-message').html(errMsg);
+				}
+			});
+		}
+	});
+
 });

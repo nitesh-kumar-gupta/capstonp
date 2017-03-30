@@ -23,6 +23,12 @@
 					<p>Quotes</p>
 				</a>
 			</li>
+			<li class="{{ Request::path() == 'studies' ? 'active' : '' }}">
+				<a href="{{ route('studies') }}">
+					<i class="material-icons">book</i>
+					<p>Studies</p>
+				</a>
+			</li>
         </ul>
     </div>
 </div>

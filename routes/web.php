@@ -23,5 +23,9 @@ Route::post('update-profile-image','ProfileController@updateImage');
 Route::get('randomquotes','QuoteController@getRandomQuotes');
 Route::post('addnewquote','QuoteController@addNewQuote');
 Route::get('quotes','QuoteController@getAjaxQuote')->name('quotes');
-Route::resource('item-ajax', 'QuoteController');
+Route::resource('quote-ajax', 'QuoteController');
 
+Route::get('lateststudy', 'StudyController@getLatestStudy');
+Route::post('addnewstudy', 'StudyController@addNewStudy');
+Route::get('studies','StudyController@getAjaxStudy')->name('studies');
+Route::resource('study-ajax', 'StudyController');

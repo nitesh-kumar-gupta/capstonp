@@ -4,23 +4,19 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateQuotesTable extends Migration
+class CreateStudiesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
-        Schema::create('quotes', function (Blueprint $table) {
-            $table->increments('quote_id');
+        Schema::create('studies', function (Blueprint $table) {
+            $table->increments('study_id');
             $table->integer('id')->unsigned();
-            $table->string('quote',1000);
+            $table->string('study',1000);
+            $table->string('links',1000)->nullable();
             $table->boolean('active')->default(1);
             $table->timestamps();
         });
-        Schema::table('quotes', function($table) {
+        Schema::table('studies', function($table) {
             $table->foreign('id')->references('id')->on('users');
         });
     }
@@ -32,6 +28,6 @@ class CreateQuotesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('quotes');
+        Schema::dropIfExists('studies');
     }
 }

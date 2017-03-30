@@ -13,7 +13,7 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="{{ route('home') }}" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="{{ route('home') }}" class="dropdown-toggle">
                         <i class="material-icons">home</i>
                         <p class="hidden-lg hidden-md">Home</p>
                     </a>
